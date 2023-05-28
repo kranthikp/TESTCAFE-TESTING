@@ -10,6 +10,7 @@ fixture `Getting started with TestCafe`
     })
     .beforeEach(async t=>{
         // Runs before each test
+        await t.setTestSpeed(0.1) // speed should be between 0.01 to 
     })
     .after(async t=>{
         // Cleaning test data
