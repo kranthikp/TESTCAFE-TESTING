@@ -27,6 +27,9 @@ test('My First TestCafe Test', async t =>{
     const submit_button = Selector("#submit-button")
     const articalText = Selector('#article-header').innerText
 
+    // await t.takeScreenshot({fullPage: true})
+    // await t.takeElementScreenshot(submit_button) // helpful for visual regression to compare and assert
+
     await t.typeText(dev_name_input, "kranthi")
     // await t.wait(3000)
     await t.click(submit_button)
