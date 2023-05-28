@@ -10,7 +10,7 @@ fixture `Getting started with TestCafe`
     })
     .beforeEach(async t=>{
         // Runs before each test
-        await t.setTestSpeed(0.1) // speed should be between 0.01 to 
+        await t.setTestSpeed(1) // speed should be between 0.01 to 
     })
     .after(async t=>{
         // Cleaning test data
@@ -23,10 +23,12 @@ fixture `Getting started with TestCafe`
 
 test('My First TestCafe Test', async t =>{
     //here goes testcafe code
-    await t.typeText("#developer-name", "kkpanda")
+    const dev_name_input = Selector("#developer-name")
+    const submit_button = Selector("#submit-button")
+    const articalText = Selector('#article-header').innerText
+
+    await t.typeText(dev_name_input, "kranthi")
     // await t.wait(3000)
-    await t.click("#submit-button")
-
-    await t.expect(Selector('#article-header').innerText).contains('kkpanda') // kranthi
-
+    await t.click(submit_button)
+    await t.expect(articalText).contains('kranthi') // kkpanda
 })
